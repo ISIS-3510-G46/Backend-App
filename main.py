@@ -4,6 +4,15 @@ from typing import List
 
 app = FastAPI()
 
+"""
+ARCHIVO DE PRUEBAS COMO BACKEND:
+
+- Solo para pruebas, lo estuve usando para testear kotlin.
+- Los endpoints funcionan bien toca ver como meter y sacar la info de una bd.
+- Posiblemente agregar mas variables y entidades.
+
+""" 
+
 # mockss
 clothing_posts = [
     {"id":"1", "name": "T-Shirt", "price": "20,000", "brand": "Nike", "category": "summer" , "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/92103a27abea4abbb23ccc98cbbd2c4c_9366/Camiseta_de_Local_Al_Nassr_FC_24-25_Ronaldo_Amarillo_JP0459_02_laydown.jpg"},
@@ -31,7 +40,6 @@ def get_clothing():
 
 
 
-# ✅ Fetch clothing items by category
 @app.get("/clothing/category/{category_name}", response_model=List[ClothingPost])
 def get_clothing_by_category(category_name: str):
     filtered_posts = [post for post in clothing_posts if post["category"].lower() == category_name.lower()]
