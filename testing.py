@@ -17,7 +17,7 @@ ARCHIVO DE PRUEBAS (Usado antes como backend):
     - brand: str    
     - category: str : Nublado | Frio | Lluvia | Calor | Oferta
     - image: str    : URL
-    - color: str    : Cualquier color textual (Rojo, Negro, etc)
+    - color: str    : Cualquier color textual (Rojo, Negro, Azul, etc)
     - size: str     : XS | S | M | L | XL
     - group: str    : Hombre | Mujer 
 
