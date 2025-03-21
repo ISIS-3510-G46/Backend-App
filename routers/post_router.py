@@ -1,6 +1,6 @@
 from typing import List
 from fastapi import APIRouter, HTTPException
-from services.post_service import register_post, get_all_posts, get_posts_by_category
+from services.post_service import register_post, get_all_posts, get_posts_by_category, get_post_by_id
 from schemas.post import PostCreate, PostResponse
 
 router = APIRouter()
@@ -45,3 +45,11 @@ def get_clothing_by_category(category_name: str):
     if not posts_by_category:
         raise HTTPException(status_code=404, detail="No posts found.")
     return posts_by_category 
+
+@router.get("/clothing/{post_id}", response_model=PostResponse)
+def get_clothing_by_id(post_id: int):
+    post = get_post_by_id(post_id)
+    if not post:
+        raise HTTPException(status_code=404, detail="Post not found.")
+    return post
+
