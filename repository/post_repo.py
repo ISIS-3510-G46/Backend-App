@@ -12,7 +12,7 @@ def create_post(post: PostCreate):
         "group": post.group,
         "price": post.price
     }).execute()
-    return response.data
+    return response.data[0]
 
 def get_posts():
     response = supabase.table("Post").select("*").execute()
