@@ -13,3 +13,5 @@ and execute the code with this command:
 ````bash
 uvicorn main:app --reload
 ````
+
+Also remember the .env file is needed in the root of the project for the connection with Supabase.
