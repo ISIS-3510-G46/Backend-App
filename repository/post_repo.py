@@ -1,13 +1,20 @@
 from database import supabase
 from schemas.post import PostCreate
+from storage import get_storage_image
+from services.color_classifier import get_dominant_color
+
+
 
 def create_post(post: PostCreate):
+    post_image = get_storage_image(post.image) # Get image from storage
+    dominant_color = get_dominant_color(post_image) # Get clothing color
+
     response = supabase.table("Post").insert({
         "name": post.name,
         "brand": post.brand,
         "category": post.category,
         "image": post.image,
-        "color": post.color,
+        "color": dominant_color,
         "size": post.size,
         "group": post.group,
         "price": post.price
