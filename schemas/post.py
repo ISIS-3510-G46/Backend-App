@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class PostCreate(BaseModel):
     name: str
@@ -9,6 +10,7 @@ class PostCreate(BaseModel):
     size: str
     group: str
     price: str 
+    thumbnail: Optional[str] = None
 
 class PostResponse(BaseModel):
     id: int
@@ -20,6 +22,7 @@ class PostResponse(BaseModel):
     size: str
     group: str
     price: str 
+    thumbnail: Optional[str] = None
 
     class Config:
         from_attributes = True

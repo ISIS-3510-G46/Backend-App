@@ -38,8 +38,9 @@ for i in range(1, 50):
         "color": random.choice(colors),
         "size": random.choice(sizes),
         "group": random.choice(groups),
-        "price": f"{random.randint(10000, 200000):,}" 
+        "price": f"{random.randint(10000, 200000):,}",
+        "thumbnail": image_mapping[product_name]
     })
 
 df = pd.DataFrame(data)
-df.to_csv("repository/seed_for_supabase.csv", index=False)
+df.to_csv("seed_for_supabase.csv", index=False)

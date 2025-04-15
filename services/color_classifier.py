@@ -1,5 +1,4 @@
 import numpy as np
-import os
 from PIL import Image 
 
 # https://stackoverflow.com/questions/3241929/how-to-find-the-dominant-most-common-color-in-an-image
@@ -18,7 +17,6 @@ def get_dominant_color(image_file):
     palette_index = color_counts[1][1]
     dominant_color = palette[palette_index*3:palette_index*3+3]
     final_color = closest_basic_color(dominant_color)
-    os.remove(image_file)
 
     return final_color
 
