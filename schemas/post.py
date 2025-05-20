@@ -11,6 +11,7 @@ class PostCreate(BaseModel):
     group: str
     price: str 
     thumbnail: Optional[str] = None
+    userId: Optional[str] = None
 
 class PostResponse(BaseModel):
     id: int
@@ -23,6 +24,7 @@ class PostResponse(BaseModel):
     group: str
     price: str 
     thumbnail: Optional[str] = None
+    userId: Optional[str] = None
 
     class Config:
         from_attributes = True

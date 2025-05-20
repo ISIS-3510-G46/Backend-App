@@ -20,7 +20,8 @@ def create_post(post: PostCreate):
         "size": post.size,
         "group": post.group,
         "price": post.price,
-        "thumbnail": img_thumbnail_id
+        "thumbnail": img_thumbnail_id,
+        "userId": post.userId
     }).execute()
     return response.data[0]
 
