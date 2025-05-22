@@ -7,6 +7,11 @@ load_dotenv()
 url: str = os.environ.get("SUPABASE_URL")
 key: str = os.environ.get("SUPABASE_KEY")
 
+if url is None or key is None:
+    #modo produccion
+    url = os.getenv("SUPABASE_URL")
+    key = os.getenv("SUPABASE_KEY")
+
 
 # Create a Supabase client
 supabase: Client = create_client(url, key)
